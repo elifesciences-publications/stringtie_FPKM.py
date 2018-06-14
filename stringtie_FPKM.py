@@ -7,7 +7,7 @@ Usage:
 python stringtie_FPKM.py <ballgown_dir>|<sample_list>
 
 For example:
-  python stringtie_FPKM.py /foo/ballgown/
+  python stringtie_FPKM.py /foo/stringtie_output/
 Or (it is better if the groups are ordered, i.e. Group1, Group2, Group3...):
   python stringtie_FPKM.py sample_list.tsv
 
