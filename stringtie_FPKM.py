@@ -4,7 +4,7 @@
 
 '''
 Usage:
-python stringtie_FPKM.py <ballgown_dir>|<sample_list>
+python stringtie_FPKM.py <stringtie_output_dir>|<sample_list>
 
 For example:
   python stringtie_FPKM.py /foo/stringtie_output/
