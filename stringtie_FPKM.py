@@ -13,9 +13,9 @@ Or (it is better if the groups are ordered, i.e. Group1, Group2, Group3...):
 
 sample_list.tsv content (tabluar format):
 /foo/Sample1/\tGroup1
-/foo/Sample2/\tGroup1
-/foo/Sample3/\tGroup2
-/foo/Sample4/\tGroup2
+/foo/Sample2/\tGroup2
+/foo/Sample3/\tGroup3
+/foo/Sample4/\tGroup4
 '''
 
 import sys, subprocess, os, re
