@@ -8,14 +8,14 @@ python stringtie_FPKM.py <ballgown_dir>|<sample_list>
 
 For example:
   python stringtie_FPKM.py /foo/ballgown/
-Or (it is better if the groups are ordered, i.e. WTF, TRF, WTM, TRM):
+Or (it is better if the groups are ordered, i.e. Group1, Group2, Group3...):
   python stringtie_FPKM.py sample_list.tsv
 
 sample_list.tsv content (tabluar format):
-/foo/ballgown/WTF/t_data.ctab\tWTF
-/foo/ballgown/TRF/t_data.ctab\tTRF
-/foo/ballgown/WTM/t_data.ctab\tWTM
-/foo/ballgown/TRM/t_data.ctab\tTRM
+/foo/Sample1/\tGroup1
+/foo/Sample2/\tGroup1
+/foo/Sample3/\tGroup2
+/foo/Sample4/\tGroup2
 '''
 
 import sys, subprocess, os, re
