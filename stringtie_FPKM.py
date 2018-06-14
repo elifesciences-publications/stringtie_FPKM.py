@@ -50,7 +50,6 @@ for item in filelist:
 	i += 1
 	filename = item[0]
 	if os.path.isdir(filename):
-		#filename += '/t_data.ctab'
 		if filename[-1] != '/':
 			filename += '/'
 		filename += subprocess.check_output('ls %s|grep "\.gtf$"' % filename, shell=True).strip()
@@ -74,11 +73,12 @@ for item in filelist:
 					# May vary:
 					#gene_id = re.findall(ref_gene_name_p, info)
 					gene_id = re.findall(gene_id_p, info)
+					trx_id = re.findall(trx_id_p, info)
 					FPKM = re.findall(FPKM_p, info)
 					if len(gene_id) == 1 and len(FPKM) == 1:
-						gene_id = gene_id[0]
+						ID = "%s\t%s" % (gene_id[0], trx_id[0])
 						FPKM = FPKM[0]
-						FPKM_stats = deepcopy(FPKM_dict.get(gene_id, {}))
+						FPKM_stats = deepcopy(FPKM_dict.get(ID, {}))
 						FPKM_stats[group] = FPKM
 						FPKM_dict[gene_id] = deepcopy(FPKM_stats)
 			except IndexError:
@@ -90,7 +90,7 @@ with open("FPKM_stats.tsv", 'w') as outf:
 	for item in sorted(FPKM_dict.iteritems()):
 		n += 1
 		if n == 1:
-			outf.write("Gene_id\t" + '\t'.join(groups) + "\n")
+			outf.write("Gene_id\tTranscript_id\t" + '\t'.join(groups) + "\n")
 		FPKMs = [item[-1].get(g, "NA") for g in groups]
 		outf.write(item[0] + '\t' + "\t".join(FPKMs) + '\n')
 print "All set."
